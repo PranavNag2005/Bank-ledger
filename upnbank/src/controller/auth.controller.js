@@ -1,7 +1,7 @@
 import userModel from "../models/user.model.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import sendRegistrationEmail from '../utils/email.js'
+import {sendRegistrationEmail} from '../utils/email.js'
 
 async function generateRefreshToken(user) {
     const refreshToken = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
